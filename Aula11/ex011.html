@@ -16,13 +16,14 @@
 
     <script>
         function checarNacionalidade(){
-            var pais = window.document.querySelector('input#txtpais')
+            var pais = window.document.querySelector('input#txtpais').value
             var res = window.document.querySelector('div#res')
-            if(pais.value == "BRASIL"){
-                res.innerHTML = `Você é <strong>brasileiro!</strong>`
+            pais = pais.toUpperCase()
+            if(pais == "BRASIL"){
+                res.innerHTML = `<p>Você é <strong>brasileiro!</strong></p>`
             }
             else{
-                res.innerHTML = `Você é <strong>estrangeiro!</strong>`
+                res.innerHTML = `<p>Você é <strong>estrangeiro!</strong></p>`
             }
         }
     </script>
