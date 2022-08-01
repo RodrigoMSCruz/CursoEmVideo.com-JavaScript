@@ -33,6 +33,6 @@ function contar(){
             }
         }
         
-        res.innerHTML += `FIM`
+        res.innerHTML += ` FIM`
     }
 }
