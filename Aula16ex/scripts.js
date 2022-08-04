@@ -3,8 +3,6 @@ let lista = window.document.querySelector('select#flista')
 let res = window.document.querySelector('div#res')
 let valores = []
 
-
-
 function isNumero(n){
     if((n >= 1) && (n <=100)){
         return true
