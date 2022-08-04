@@ -27,20 +27,22 @@ function adicionar(){
     if(isNumero(Number(num.value)) && !inLista(Number(num.value), valores)){
         valores.push(Number(num.value))
         let item = window.document.createElement('option')
-        item.text = `${num.value}`
-        //item.value = `lista${num.value}`
+        item.text = `${Number(num.value)}`
+        //item.value = `lista${num.value}` // Apenas para PHP
         fseltab.appendChild(item)
-
+        res.innerHTML = ''
     }
     else{
         window.alert("Valor fora dos limites entre 1-100 ou repetido!")
     }
+    num.value = ''
+    num.focus()
 }
 
 function finalizar(){
     res.innerHTML = ''
-    let maior = -1
-    let menor = 101
+    let maior, menor
+    maior = menor = valores[0]
     let soma = 0
     
     for(var i in valores){
@@ -52,8 +54,9 @@ function finalizar(){
         }
         soma = soma + valores[i]
     }
-    res.innerHTML += `O maior número é ${maior}<br>`
-    res.innerHTML += `O menor número é ${menor}<br>`
-    res.innerHTML += `O somatório é  ${soma}<br>`
-    res.innerHTML += `A média é  ${soma/valores.length}`
+    res.innerHTML += `<p>O total de números é: ${valores.length}.</p>`
+    res.innerHTML += `<p>O maior número é: ${maior}.</p>`
+    res.innerHTML += `<p>O menor número é: ${menor}.</p>`
+    res.innerHTML += `<p>O somatório é: ${soma}.</p>`
+    res.innerHTML += `<p>A média é: ${soma/valores.length}<p>`
 }
